@@ -1,0 +1,1573 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      color: white;
+      background: #000;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Fondo hero */
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
+                  url('https://images.unsplash.com/photo-1581092160607-36e2e7fdd65e?auto=format&fit=crop&q=80') center/cover no-repeat;
+      /* Idealmente usa la foto real de tu sitio o similar con neveras Samsung + persona */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    /* Logo superior izquierda */
+    .logo-container {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+    }
+
+    .logo {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #00d1ff;
+      box-shadow: 0 4px 12px rgba(0,209,255,0.4);
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      line-height: 1.1;
+      margin-bottom: 0.8rem;
+     
+      max-width: 90%;
+      color: white;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      margin: 1rem 0 2.5rem;
+      opacity: 0.95;
+      max-width: 85%;
+      line-height: 1.4;
+    }
+    #nuestros-servicios{
+        color : #00a3d9;
+    }
+    #secadora-titulo{
+        color: #00a3d9 ;
+    }
+    #valadora--titulo{
+        color: #00a3d9 ;
+    }
+    #casos-exito{
+        color: white;
+    }
+    #nuestros-servicios{
+        color:#00a3d9 ;
+    }
+    #banner {
+        
+        width: 100%;
+    height: 100%;
+    min-height: 400px; /* ajusta según tu diseño */
+    background-image: url("img/banner2.png");
+    
+    background-size: cover;        /* 🔥 clave */
+    background-position: center;   /* centra la imagen */
+    background-repeat: no-repeat;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 30px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: white;
+      border-radius: 50px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+      transition: all 0.25s ease;
+    }
+
+    .btn:active {
+      transform: scale(0.96);
+    }
+
+    .btn-call {
+      background: #00bcd4;      /* turquesa/cyan como en la captura */
+    }
+
+    .btn-call:hover,
+    .btn-call:focus {
+      background: #0097a7;
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+    }
+
+    .btn-whatsapp:hover,
+    .btn-whatsapp:focus {
+      background: #1ebe52;
+    }
+
+    /* Botón flotante WhatsApp (esquina inferior derecha) */
+    .fab-whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 65px;
+      height: 65px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.1rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+      z-index: 999;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .fab-whatsapp:hover {
+      transform: scale(1.08);
+      box-shadow: 0 10px 25px rgba(37,213,102,0.5);
+    }
+
+    @media (min-width: 768px) {
+      h1 { font-size: 3.8rem; }
+      .subtitle { font-size: 1.5rem; }
+      .buttons { flex-direction: row; justify-content: center; max-width: 700px; }
+      .btn { min-width: 280px; }
+    }
+
+
+    /*apartado de los cuadros herramienta, reloj y otros*/
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /*
+          Nota:
+          Antes el body tenía padding (40px 15px). Eso encogía el hero en móviles
+          (dejando un “marco” alrededor) y hacía que todo se viera apretado.
+          El espaciado debe ir por sección, no en el body.
+        */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #e8f4fd; /* Fondo azul muy claro como en la captura */
+            color: #333;
+            padding: 0;               /* ✅ sin marco en móvil */
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .icon {
+            font-size: 3.2rem;
+            color: #00bcd4; /* Cyan característico de la imagen */
+            margin-bottom: 15px;
+        }
+
+        .title {
+            color: #00bcd4;
+            font-size: 1.25rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .text {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        /* Responsivo: en pantallas medianas y grandes → 2 o 4 columnas */
+        @media (min-width: 640px) {
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 992px) {
+            .services {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .card {
+                padding: 30px 20px;
+            }
+
+            .icon {
+                font-size: 3.8rem;
+            }
+
+            .title {
+                font-size: 1.35rem;
+            }
+        }
+
+
+        /*Nuestros Servicios*/
+        .services-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .header-text {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .confiabilidad {
+            color: #00a3d9; /* Cyan característico Samsung */
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .main-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #00a3d9;;
+            margin-bottom: 30px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .logo-samsung {
+            max-width: 320px;
+            width: 100%;
+            height: auto;
+        }
+
+        .description {
+            font-size: 1.15rem;
+            max-width: 720px;
+            text-align: center;
+            color: #444;
+        }
+
+        .highlight {
+            color: #000;
+            font-weight: 600;
+        }
+
+        .btn-agendar {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 16px 50px;
+            background-color: #00a3d9;
+            color: white;
+            font-size: 1.15rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.25s ease;
+        }
+
+        .btn-agendar:hover,
+        .btn-agendar:focus {
+            background-color: #0088b8;
+        }
+
+        /* ────────────────────────────────────────────────
+           Responsive - En pantallas grandes: logo a la izquierda + texto a la derecha
+        ──────────────────────────────────────────────── */
+        @media (min-width: 768px) {
+            .content-wrapper {
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 60px;
+                text-align: left;
+            }
+
+            .logo-samsung {
+                max-width: 380px;
+            }
+
+            .description {
+                text-align: left;
+                max-width: 520px;
+            }
+
+            .services-section {
+                padding: 0 40px;
+            }
+
+            .main-title {
+                font-size: 3.2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .logo-samsung {
+                max-width: 450px;
+            }
+
+            .description {
+                max-width: 620px;
+                font-size: 1.25rem;
+            }
+        }
+
+        /*apartado brindamos soluciones*/
+        .enfoque-section {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .subtitle {
+            color: white; /* Cyan consistente con secciones anteriores */
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+
+
+
+
+ font-size: clamp(1rem, 4vw, 1.3rem); /* se adapta a móvil y desktop */
+  font-weight: 700;                   /* 🔥 bold */
+  line-height: 1.4;
+  letter-spacing: 0.3px;
+  text-align: center;
+
+
+
+
+        }
+
+        .main-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #00a3d9;
+            margin-bottom: 20px;
+        }
+
+        .main-title span {
+            display: block;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .image-container {
+            width: 100%;
+            max-width: 380px;
+            order: 1; /* Imagen arriba en móvil */
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            display: block;
+        }
+
+        .text-content {
+            order: 2;
+            text-align: center;
+            max-width: 720px;
+        }
+
+        .intro-text {
+            font-size: 1.15rem;
+            color: #444;
+            margin-bottom: 40px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .value-item {
+            text-align: center;
+        }
+
+        .value-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 12px;
+        }
+
+        .value-desc {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Responsive: en desktop, imagen a la derecha + texto a la izquierda */
+        @media (min-width: 768px) {
+            .content-wrapper {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 60px;
+            }
+
+            .image-container {
+                max-width: 420px;
+                order: 2; /* Imagen a la derecha */
+            }
+
+            .text-content {
+                order: 1; /* Texto a la izquierda */
+                text-align: left;
+                max-width: 55%;
+            }
+
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px 60px;
+            }
+
+            .value-item {
+                text-align: left;
+            }
+
+            .main-title {
+                font-size: 3.2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .image-container {
+                max-width: 480px;
+            }
+
+            .text-content {
+                max-width: 50%;
+            }
+
+            .main-title {
+                font-size: 3.6rem;
+            }
+        }
+
+        /*apartado : Servicios de Reparación*/
+        .repair-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .main-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 20px;
+        }
+        
+
+        .intro {
+            font-size: 1.3rem;
+            color: #444;
+            max-width: 900px;
+            margin: 0 auto 50px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .repair-card {
+            background: #f9f9f9;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .repair-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 25px 20px;
+        }
+
+        .card-title {
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 12px;
+        }
+
+        .card-desc {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .btn-agendar {
+            display: inline-block;
+            padding: 12px 35px;
+            background-color: #00a3d9;
+            color: white;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.25s ease;
+        }
+
+        .btn-agendar:hover,
+        .btn-agendar:focus {
+            background-color: #0088b8;
+        }
+
+        /* Responsive: 3 columnas en desktop */
+        @media (min-width: 768px) {
+            .cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+             #lavadoras {
+              grid-template-columns: repeat(2, 1fr);
+                
+            }
+
+            .card-image {
+                height: 260px;
+            }
+
+            .main-title {
+                font-size: 3.4rem;
+            }
+
+            .intro {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .repair-section {
+                padding: 80px 40px;
+            }
+
+            .card-image {
+                height: 280px;
+            }
+        }
+
+
+        /*Servicios de reparación de lavadoras secadoras*/
+
+        .repair-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .main-title {
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 25px;
+        }
+
+        .intro {
+            font-size: 1.25rem;
+            color: #444;
+            max-width: 900px;
+            margin: 0 auto 50px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .repair-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .repair-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 25px 20px 35px;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 12px;
+        }
+
+        .card-desc {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .btn-agendar {
+            display: inline-block;
+            padding: 12px 40px;
+            background: #00a3d9; /* Cyan profesional */
+            color: white;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.25s ease;
+        }
+
+        .btn-agendar:hover {
+            background: #0088b8;
+        }
+
+        /* Responsive: 3 columnas en pantallas medianas/grandes */
+        @media (min-width: 768px) {
+            .cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+             #lavadoras {
+              grid-template-columns: repeat(2, 1fr);
+                
+            }
+
+            .card-image {
+                height: 280px;
+            }
+
+            .main-title {
+                font-size: 3.2rem;
+            }
+
+            .intro {
+                font-size: 1.35rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .repair-section {
+                padding: 80px 40px;
+            }
+
+            .card-image {
+                height: 300px;
+            }
+        }
+
+***/*apartado: Mantenimiento de lavadoras secadoras Samsung*/
+.maintenance-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .main-title {
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        .intro {
+            font-size: 1.25rem;
+            color: #444;
+            max-width: 900px;
+            margin: 0 auto 50px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .maintenance-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .maintenance-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 25px 20px 35px;
+        }
+
+        .card-title {
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .card-desc {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .btn-agendar {
+            display: inline-block;
+            padding: 12px 40px;
+            background: #00a3d9;
+            color: white;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.25s ease;
+        }
+
+        .btn-agendar:hover {
+            background: #0088b8;
+        }
+
+        /* Responsive: 2 columnas en pantallas medianas/grandes */
+        @media (min-width: 768px) {
+            .cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 35px;
+            }
+             #lavadoras {
+              grid-template-columns: repeat(2, 1fr);
+                
+            }
+
+            .card-image {
+                height: 280px;
+            }
+
+            .main-title {
+                font-size: 3.2rem;
+            }
+
+            .intro {
+                font-size: 1.35rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .maintenance-section {
+                padding: 80px 40px;
+            }
+
+            .card-image {
+                height: 300px;
+            }
+        }
+
+
+        /*apartado: Reparación de neveras Samsung*/
+
+
+        .fridge-repair-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .main-title {
+            font-size: 2.9rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 18px;
+        }
+
+        .intro {
+            font-size: 1.28rem;
+            color: #444;
+            max-width: 920px;
+            margin: 0 auto 50px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .repair-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transition: transform 0.28s ease, box-shadow 0.28s ease;
+        }
+
+        .repair-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 14px 35px rgba(0,0,0,0.13);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 28px 22px 40px;
+        }
+
+        .card-title {
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 14px;
+        }
+
+        .card-desc {
+            font-size: 1.02rem;
+            color: #555;
+            margin-bottom: 28px;
+        }
+
+        .btn-agendar {
+            display: inline-block;
+            padding: 13px 45px;
+            background: #00a3d9;
+            color: white;
+            font-size: 1.08rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.25s ease;
+        }
+
+        .btn-agendar:hover,
+        .btn-agendar:focus {
+            background: #0088b8;
+        }
+
+        /* Responsive: 3 columnas en desktop */
+        @media (min-width: 768px) {
+            .cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+            #lavadoras {
+              grid-template-columns: repeat(2, 1fr);
+                
+            }
+
+            .card-image {
+                height: 300px;
+            }
+
+            .main-title {
+                font-size: 3.5rem;
+            }
+
+            .intro {
+                font-size: 1.38rem;
+            }
+
+            .repair-section {
+                padding: 80px 40px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .card-image {
+                height: 320px;
+            }
+
+            .card-title {
+                font-size: 1.55rem;
+            }
+        }
+
+
+        /*Arreglo de neveras Samsung*/
+
+
+
+        .fridge-repair-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .main-title {
+            font-size: 2.9rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 18px;
+        }
+
+        .intro {
+            font-size: 1.28rem;
+            color: #444;
+            max-width: 920px;
+            margin: 0 auto 50px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .repair-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transition: transform 0.28s ease, box-shadow 0.28s ease;
+        }
+
+        .repair-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 14px 35px rgba(0,0,0,0.13);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 28px 22px 40px;
+        }
+
+        .card-title {
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 14px;
+        }
+
+        .card-desc {
+            font-size: 1.02rem;
+            color: #555;
+            margin-bottom: 28px;
+        }
+
+        .btn-agendar {
+            display: inline-block;
+            padding: 13px 45px;
+            background: #00a3d9;
+            color: white;
+            font-size: 1.08rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.25s ease;
+        }
+
+        .btn-agendar:hover,
+        .btn-agendar:focus {
+            background: #0088b8;
+        }
+
+        /* Responsive: 3 columnas en desktop */
+        @media (min-width: 768px) {
+            .cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+
+            .card-image {
+                height: 300px;
+            }
+
+            .main-title {
+                font-size: 3.5rem;
+            }
+
+            .intro {
+                font-size: 1.38rem;
+            }
+
+            .fridge-repair-section {
+                padding: 80px 40px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .card-image {
+                height: 320px;
+            }
+
+            .card-title {
+                font-size: 1.55rem;
+            }
+        }
+
+
+        /*apartado : Contáctanos ahora para una solución rápida y eficiente*/
+        .contact-hero {
+            position: relative;
+            height: 10vh;
+            min-height: 300px;
+            background: linear-gradient(135deg, #006d77 0%, #0a9396 50%, #005f73 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            overflow: hidden;
+        }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.4) 100%);
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .main-text {
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 1.2rem;
+        }
+
+        .main-text span {
+            display: block;
+            font-size: 2.4rem;
+            margin-top: 0.4rem;
+        }
+
+        .btn-contact {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 18px 60px;
+            background: #00ff9d;
+            color: #000;
+            font-size: 1.35rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 8px 25px rgba(0, 255, 157, 0.35);
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-contact:hover,
+        .btn-contact:focus {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(0, 255, 157, 0.5);
+            background: #00e88c;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .main-text {
+                font-size: 2.4rem;
+            }
+
+            .main-text span {
+                font-size: 1.9rem;
+            }
+
+            .btn-contact {
+                padding: 16px 50px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-text {
+                font-size: 2.1rem;
+            }
+
+            .main-text span {
+                font-size: 1.7rem;
+            }
+
+            .btn-contact {
+                padding: 14px 45px;
+                font-size: 1.1rem;
+            }
+        }
+
+
+        /*cuadros  años experiencia ...*/
+        .stats-section {
+            background: linear-gradient(to bottom, #004d66 0%, #003340 100%);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 35px 25px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        .stat-icon {
+            font-size: 3.2rem;
+            margin-bottom: 18px;
+            color: #00d4ff;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #fff;
+            line-height: 1;
+        }
+
+        .stat-text {
+            font-size: 1.15rem;
+            color: #a0d8ef;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .stats-section {
+                padding: 60px 15px;
+            }
+
+            .stat-number {
+                font-size: 2.8rem;
+            }
+
+            .stat-text {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stat-number {
+                font-size: 2.4rem;
+            }
+
+            .stat-icon {
+                font-size: 2.6rem;
+            }
+        }
+
+        /*apartado: Conoce algunos de nuestros casos de éxito en la reparación de electrodomésticos.
+        */
+
+
+
+
+        .success-section {
+            padding: 80px 20px;
+            text-align: center;
+            background: #0a1f2e;
+        }
+
+        .main-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.25;
+        }
+
+        .main-subtitle {
+            font-size: 1.35rem;
+            color: #a0d8ef;
+            max-width: 900px;
+            margin: 0 auto 60px;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .case-card {
+            background: #004d66;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .case-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 16px 45px rgba(0,0,0,0.55);
+        }
+
+        .case-image {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .case-content {
+            padding: 30px 25px 40px;
+        }
+
+        .case-subtitle {
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: #00d4ff;
+            margin-bottom: 12px;
+        }
+
+        .case-solution {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 18px;
+            color: white;
+        }
+
+        .case-desc {
+            font-size: 1.05rem;
+            color: #d0e8f5;
+            margin-bottom: 30px;
+            line-height: 1.55;
+        }
+
+        .btn-case {
+            display: inline-block;
+            padding: 14px 45px;
+            background: #00a3d9;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-case:hover {
+            background: #0088b8;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,163,217,0.4);
+        }
+
+        /* Responsive: 2 o 3 columnas según pantalla */
+        @media (min-width: 768px) {
+            .cases-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .main-title {
+                font-size: 3.4rem;
+            }
+
+            .case-image {
+                height: 300px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .cases-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .case-image {
+                height: 320px;
+            }
+
+            .main-title {
+                font-size: 3.8rem;
+            }
+        }
+
+        #nevera-reparacion-titulo{
+            color: #00a3d9;
+        }
+        #arreglo-neveras--{
+            color: #00a3d9;
+        }
+        #nuestro-enfoque{
+            color: #00a3d9;
+        }
+
+
+
+        /*boton flotante mejorado*/
+        /* ────────────────────────────────────────────────
+   Botón flotante WhatsApp - Accesible y SEO friendly
+──────────────────────────────────────────────── */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 65px;
+  height: 65px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  z-index: 9999;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* Hover y foco (accesibilidad) */
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible {
+  transform: scale(1.12);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+  outline: 3px solid #25D366;
+  outline-offset: 4px;
+}
+
+/* Animación sutil de pulso (no invasiva) */
+@keyframes pulse-whatsapp {
+  0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70%  { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.whatsapp-float {
+  animation: pulse-whatsapp 2.2s infinite ease-out;
+}
+
+/* Imagen dentro del botón */
+.whatsapp-float img,
+.whatsapp-float svg {
+  width: 38px;
+  height: 38px;
+  transition: transform 0.25s ease;
+}
+
+.whatsapp-float:hover img,
+.whatsapp-float:focus-visible img {
+  transform: scale(1.15);
+}
+
+/* Responsive - más espacio en móviles pequeños */
+@media (max-width: 480px) {
+  .whatsapp-float {
+    bottom: 70px;          /* Evita solaparse con barra inferior de navegadores móviles */
+    right: 20px;
+    width: 58px;
+    height: 58px;
+  }
+  
+  .whatsapp-float img,
+  .whatsapp-float svg {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+/* ────────────────────────────────────────────────
+   HERO (MÓVIL): logo arriba + tipografías responsivas
+   Soluciona el problema de “marco” y de texto enorme en pantallas pequeñas.
+──────────────────────────────────────────────── */
+
+/* Asegura que el texto del hero siempre sea blanco aunque el body tenga color oscuro/claro */
+.hero,
+.hero * {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  /* En móvil/tablet, el logo debe ir en el flujo (arriba del título) */
+  .logo-container {
+    position: static;
+    margin: 10px 0 14px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero {
+    height: auto;                 /* evita recortes raros en móviles */
+    min-height: 100vh;
+    padding: 28px 16px 34px;
+    justify-content: flex-start;  /* el contenido arranca arriba y respira */
+  }
+
+  .logo {
+    width: 78px;
+    height: 78px;
+  }
+
+  h1 {
+    font-size: clamp(2.0rem, 6.5vw, 2.6rem);
+    line-height: 1.05;
+    margin-bottom: 0.65rem;
+    letter-spacing: 0.5px;
+  }
+
+  .subtitle {
+    font-size: clamp(0.95rem, 3.6vw, 1.15rem);
+    max-width: 92%;
+    margin: 0.9rem 0 1.6rem;
+    line-height: 1.45;
+    opacity: 0.95;
+  }
+
+  .buttons {
+    max-width: 360px;
+    width: 100%;
+  }
+
+  .btn {
+    padding: 16px 22px;
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  h1 {
+    font-size: clamp(1.85rem, 7.2vw, 2.35rem);
+  }
+}
+
+
+/* ─────────────────────────────────────────────
+   SEPARACIÓN CORRECTA SECCIÓN SERVICES
+───────────────────────────────────────────── */
+
+.services {
+  padding: 80px 20px;     /* espacio arriba y abajo */
+  margin: 80px auto;      /* separación con otras secciones */
+  max-width: 1200px;
+}
+
+/* Más aire en desktop */
+@media (min-width: 768px) {
+  .services {
+    padding: 100px 30px;
+    margin: 100px auto;
+  }
+}
